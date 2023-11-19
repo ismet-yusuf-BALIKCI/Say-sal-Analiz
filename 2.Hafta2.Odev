@@ -1,0 +1,16 @@
+def f(x): 
+    return x**3 + 4(x**2) - 10
+
+def bisection(a, b, tol):
+    fa = f(a)
+    while (b - a) > tol: 
+        c = (a + b) / 2 
+        fc = f(c) 
+        if fc == 0: 
+            return c
+        elif fa * fc < 0:
+            b = c 
+        else:
+            a = c 
+            fa = fc 
+    return c
